@@ -53,6 +53,7 @@
 		84D7DA2928C7785B00231C7E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DA2828C7785B00231C7E /* Alerts.swift */; };
 		84D7DA2C28C7799900231C7E /* UIApplication + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DA2B28C7799900231C7E /* UIApplication + extension.swift */; };
 		84D7DA2E28C77E6D00231C7E /* InformationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7DA2D28C77E6D00231C7E /* InformationViewDelegate.swift */; };
+		84DEFA7228DD266D006B0750 /* TemporaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DEFA7128DD266D006B0750 /* TemporaryStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		84D7DA2828C7785B00231C7E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		84D7DA2B28C7799900231C7E /* UIApplication + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + extension.swift"; sourceTree = "<group>"; };
 		84D7DA2D28C77E6D00231C7E /* InformationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewDelegate.swift; sourceTree = "<group>"; };
+		84DEFA7128DD266D006B0750 /* TemporaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryStorage.swift; sourceTree = "<group>"; };
 		B05EC23D12F252F5D5A9AE83 /* Pods-White&Fluffy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-White&Fluffy.debug.xcconfig"; path = "Target Support Files/Pods-White&Fluffy/Pods-White&Fluffy.debug.xcconfig"; sourceTree = "<group>"; };
 		CC332D06CCFFE1E181A46F73 /* Pods_White_Fluffy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_White_Fluffy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC615CB28C437A73B0431FC /* Pods-White&Fluffy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-White&Fluffy.release.xcconfig"; path = "Target Support Files/Pods-White&Fluffy/Pods-White&Fluffy.release.xcconfig"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				84D7DA1628C7636100231C7E /* InformationDataStorage.swift */,
 				84D7DA1C28C763CD00231C7E /* InformationDataProviderProtocol.swift */,
 				84D7DA1A28C763BD00231C7E /* InformationDataStorageProtocol.swift */,
+				84DEFA7128DD266D006B0750 /* TemporaryStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				84405FBD28C67EE4005D3585 /* InformationPresenterProtocol.swift in Sources */,
 				84405FAF28C61770005D3585 /* InformationView.swift in Sources */,
 				848A21E228C3B41A00CEA79D /* SearchCell.swift in Sources */,
+				84DEFA7228DD266D006B0750 /* TemporaryStorage.swift in Sources */,
 				84D7DA1728C7636100231C7E /* InformationDataStorage.swift in Sources */,
 				84405FB928C67B85005D3585 /* InformationPresenter.swift in Sources */,
 				84D7DA1428C75E5700231C7E /* InformationVCProtocol.swift in Sources */,
