@@ -32,11 +32,12 @@ class RealmManager {
         }
     }
     
-//    func delete() {
-//        try? realm.write {
-//            realm.delete(realm.objects(LikeModel.self))
-//        }
-//    }
+    func deleteFirstLikeModel(id: String) {
+        try? realm.write {
+            let object = realm.objects(LikeModel.self).filter { $0.id == id }.first
+            realm.delete(object!)
+        }
+    }
     
     func getArrayLikeModels() -> [LikeModel] {
         return Array(realm.objects(LikeModel.self))
