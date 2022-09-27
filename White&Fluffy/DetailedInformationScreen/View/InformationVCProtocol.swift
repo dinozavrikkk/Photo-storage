@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol InformationVCProtocol: UIViewController {
-    
+    func setupView(viewModel: InformationViewModel)
 }

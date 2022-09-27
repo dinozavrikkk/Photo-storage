@@ -53,7 +53,7 @@ extension LikeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let model = presenter?.likeModel(for: indexPath) {
-            let infVC = ModuleBuilder.assemblyInformationController(model: model)
+            let infVC = ModuleBuilder.assemblyInformationController(inputModel: InformationInputModel(id: model.id, authorName: model.authorName, smallImageURL: model.smallImageURL, regularImageURL: model.regularImageURL, date: model.date, descript: model.descript, likes: model.likes))
             pushModule(withViewController: infVC)
         }
     }

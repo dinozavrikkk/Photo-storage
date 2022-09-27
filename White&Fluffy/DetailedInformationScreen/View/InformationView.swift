@@ -9,7 +9,17 @@ import Foundation
 import UIKit
 import Kingfisher
 
+struct InformationViewModel {
+    let photo: String
+    let name: String
+    let date: String
+    let like: Int
+    let description: String?
+}
+
 final class InformationView: UIView {
+    
+    weak var delegateLikeImage: InformationViewDelegate?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -75,7 +85,6 @@ final class InformationView: UIView {
         return stack
     }()
     
-    weak var delegateLikeImage: InformationViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -121,35 +130,17 @@ final class InformationView: UIView {
         flag.toggle()
     }
     
-    func updateInformationWithCodable<T: Codable>(model: T) {
-        if let model = model as? ResultPhoto {
-            guard let photo = model.urls?.regular,
-                  let photoURL = URL(string: photo),
-                  let name = model.user?.name,
-                  let date = model.created_at,
-                  let like = model.likes
-            else { return }
-            let formattedDate = dateFromApiString(date)
-            
-            imageView.kf.setImage(with: photoURL)
-            authorsNameLabel.text = "Author's name: \(name)"
-            dateOfCreationLabel.text = "Date the photo was created: \(formattedDate)"
-            descriptionPhotoLabel.text = "Photo description: \(model.description ?? "The author of this photo did not write a description")"
-            likesPhotoLabel.text = "Like: \(like)"
-        } else {
-            if let model = model as? LikeModel {
-                let photoURL = URL(string: model.regularImageURL)
-                let formattedDate = dateFromApiString(model.date)
-                
-                imageView.kf.setImage(with: photoURL)
-                authorsNameLabel.text = "Author's name: \(model.authorName)"
-                dateOfCreationLabel.text = "Date the photo was created: \(formattedDate)"
-                descriptionPhotoLabel.text = "Photo description: \(model.descript)"
-                likesPhotoLabel.text = "Like: \(model.likes)"
-            }
-        }
+    func updateInformationWithCodable(viewModel: InformationViewModel) {
+        guard let photoURL = URL(string: viewModel.photo) else { return  }
+        
+        let formattedDate = dateFromApiString(viewModel.date)
+        
+        imageView.kf.setImage(with: photoURL)
+        authorsNameLabel.text = "Author's name: \(viewModel.name)"
+        dateOfCreationLabel.text = "Date the photo was created: \(formattedDate)"
+        descriptionPhotoLabel.text = "Photo description: \(viewModel.description ?? "The author of this photo did not write a description")"
+        likesPhotoLabel.text = "Like: \(viewModel.like)"
     }
-    
 }
 
 private extension InformationView {

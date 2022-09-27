@@ -36,7 +36,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.identifier, for: indexPath) as? SearchCell
         else {
             return UICollectionViewCell()
         }
@@ -52,12 +52,14 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let numberOfCellsAtTheBottomOfTheTable = 2
         guard indexPath.item + numberOfCellsAtTheBottomOfTheTable >= presenter?.photoCount ?? 0 else { return }
         presenter?.viewWillReachPhotoLimit(text: searchBarText)
+       // presenter?.willDisplay(index: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let model = presenter?.photo(for: indexPath) {
             let infVC = ModuleBuilder.assemblyInformationController(model: model)
             pushModule(withViewController: infVC)
+
         }
     }
     
@@ -99,7 +101,7 @@ private extension SearchViewController {
     func configureCollection() {
         searchView.collectionView.delegate = self
         searchView.collectionView.dataSource = self
-        searchView.collectionView.register(SearchCell.self, forCellWithReuseIdentifier: "SearchCell")
+        searchView.collectionView.register(SearchCell.self, forCellWithReuseIdentifier: SearchCell.identifier)
     }
     
     func configureNavBar() {

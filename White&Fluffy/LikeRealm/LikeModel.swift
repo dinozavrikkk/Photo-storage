@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class LikeModel: Object, Codable {
-    
+
     @Persisted var id: String
     @Persisted var authorName: String
     @Persisted var smallImageURL: String

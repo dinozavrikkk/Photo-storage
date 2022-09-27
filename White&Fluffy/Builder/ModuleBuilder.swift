@@ -30,7 +30,7 @@ enum ModuleBuilder {
         return viewController
     }
     
-    static func assemblyInformationController(model: Codable) -> UIViewController {
+    static func assemblyInformationController(inputModel: InformationInputModel) -> UIViewController {
         let dataStorage = InformationDataStorage(model: model)
         let dataProvider = InformationDataProvider(dataStorage: dataStorage)
         let viewController = InformationViewController()

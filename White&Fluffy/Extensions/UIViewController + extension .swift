@@ -14,5 +14,4 @@ extension UIViewController {
         viewController.hidesBottomBarWhenPushed = hidesTabBarWhenPushed
         navigationController?.pushViewController(viewController, animated: animated)
     }
-    
 }

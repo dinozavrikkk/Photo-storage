@@ -31,3 +31,16 @@ enum SupportFiles {
     
 }
 
+//enum Localization {
+//    enum TabBar {
+//        case search
+//        case like
+//        
+//        var title: String {
+//            switch self {
+//            case .like
+//                return 
+//            }
+//        }
+//    }
+//}

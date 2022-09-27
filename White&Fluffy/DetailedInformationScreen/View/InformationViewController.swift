@@ -20,7 +20,8 @@ final class InformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurePresenter()
+        
+        presenter?.viewDidLoad()
         configureDelegate()
     }
     
@@ -38,8 +39,9 @@ final class InformationViewController: UIViewController {
 
 //MARK: InformationVCProtocol
 extension InformationViewController: InformationVCProtocol {
-    
-    
+    func setupView(viewModel: InformationViewModel) {
+        informationView.updateInformationWithCodable(viewModel: viewModel)
+    }
 }
 
 //MARK: InformationViewDelegate
@@ -73,18 +75,4 @@ private extension InformationViewController {
     func configureNavBar(hidden: Bool, animated: Bool) {
         navigationController?.setNavigationBarHidden(hidden, animated: animated)
     }
-    
-    func configurePresenter() {
-        if let presenter = presenter {
-            if let model = presenter.getResultPhoto as? ResultPhoto {
-                informationView.updateInformationWithCodable(model: model)
-            } else {
-                if let model = presenter.getResultPhoto as? LikeModel {
-                    informationView.updateInformationWithCodable(model: model)
-                    informationView.setHeartTintColor(flag: &likeFlag)
-                }
-            }
-        }
-    }
-    
 }

@@ -12,6 +12,8 @@ final class SearchPresenter {
     private let dataProvider: DataProviderProtocol
     private weak var viewController: SearchVCProtocol?
     
+    private var text = "random"
+    
     init(dataProvider: DataProviderProtocol, viewController: SearchVCProtocol?) {
         self.dataProvider = dataProvider
         self.viewController = viewController
@@ -43,6 +45,9 @@ extension SearchPresenter: SearchPresenterProtocol {
     
     func viewWillReachPhotoLimit(text: String) {
         dataTransmission(text: text)
+    }
+    
+    func willDisplayCell() {
     }
     
     var photoCount: Int {

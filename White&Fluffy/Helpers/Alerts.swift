@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 enum Alerts {
-    
     static func getAlertLikedImageTapped(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         UIApplication.topViewController()?.present(alert, animated: true)
     }
-
+    
+    static func getAlertLikedImageTappedV2(_ viewController: UIViewController, message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        viewController.present(alert, animated: true)
+    }
 }

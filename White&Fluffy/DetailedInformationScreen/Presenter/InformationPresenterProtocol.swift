@@ -8,8 +8,9 @@
 import Foundation
 
 protocol InformationPresenterProtocol: AnyObject {
-    
     var getResultPhoto: Codable { get }
+    
+    func viewDidLoad()
     func savedInformation()
     func deletedInformation()
     
